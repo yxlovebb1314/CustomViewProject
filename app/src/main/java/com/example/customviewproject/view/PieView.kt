@@ -6,12 +6,12 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
-import com.example.newproject.ui.utils.px
+import com.example.newproject.ui.utils.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
-private val RADIUS = 150f.px
-private val TRANSLATE_LENGTH = 40f.px  //扇形要偏移的距离
+private val RADIUS = 150f.dp
+private val TRANSLATE_LENGTH = 40f.dp  //扇形要偏移的距离
 
 /**
  * 饼图View

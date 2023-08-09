@@ -25,10 +25,15 @@ class HomeActivity : AppCompatActivity() {
         adapter.setOnItemClickListener (object : HomeRvAdapter.OnItemClickListener {
             override fun onClick(position: Int) {
                 when (position) {
-                    0 -> startActivity(Intent(this@HomeActivity, DashBoard_Pie_Activity::class.java))
+                    0 -> goToActivity(DashBoard_Pie_Activity::class.java)
+                    1 -> goToActivity(TextActivity::class.java)
                 }
             }
         })
+    }
+
+    private fun <T> goToActivity(act: Class<T>) {
+        startActivity(Intent(this, act))
     }
 
     private fun initView() {

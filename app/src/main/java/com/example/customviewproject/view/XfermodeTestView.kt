@@ -10,7 +10,7 @@ import android.graphics.PorterDuffXfermode
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
-import com.example.newproject.ui.utils.px
+import com.example.newproject.ui.utils.dp
 
 class XfermodeTestView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
@@ -18,23 +18,23 @@ class XfermodeTestView(context: Context?, attrs: AttributeSet?) : View(context, 
     private val xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
 
     //离屏缓冲区域
-    private val bufferRect = RectF(50f.px, 0f, 200f.px, 150f.px)
+    private val bufferRect = RectF(50f.dp, 0f, 200f.dp, 150f.dp)
 
     private val circleBitmap =
-        Bitmap.createBitmap(150f.px.toInt(), 200f.px.toInt(), Bitmap.Config.ARGB_8888)
+        Bitmap.createBitmap(150f.dp.toInt(), 200f.dp.toInt(), Bitmap.Config.ARGB_8888)
     private val rectBitmap =
-        Bitmap.createBitmap(150f.px.toInt(), 200f.px.toInt(), Bitmap.Config.ARGB_8888)
+        Bitmap.createBitmap(150f.dp.toInt(), 200f.dp.toInt(), Bitmap.Config.ARGB_8888)
 
     init {
         val canvas = Canvas()
         //以圆形bitmap为画布，画出圆形
         canvas.setBitmap(circleBitmap)
         paint.color = Color.parseColor("#aa00cc")
-        canvas.drawOval(100f.px, 0f, 200f.px, 100f.px, paint)
+        canvas.drawOval(100f.dp, 0f, 200f.dp, 100f.dp, paint)
         //再以方形bitmap作为画布，画出方形
         canvas.setBitmap(rectBitmap)
         paint.color = Color.parseColor("#00aabb")
-        canvas.drawRect(50f.px, 50f.px, 150f.px, 150f.px, paint)
+        canvas.drawRect(50f.dp, 50f.dp, 150f.dp, 150f.dp, paint)
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -42,10 +42,10 @@ class XfermodeTestView(context: Context?, attrs: AttributeSet?) : View(context, 
         //设置离屏缓冲，这个方式是比较耗费资源的，所以能设置多小，就设置多小
         canvas.saveLayer(bufferRect, null)
 //        canvas.drawOval(100f.px, 0f, 200f.px, 100f.px, paint)
-        canvas.drawBitmap(circleBitmap,50f.px, 0f, paint)
+        canvas.drawBitmap(circleBitmap,50f.dp, 0f, paint)
         paint.xfermode = xfermode
 //        canvas.drawRect(50f.px, 50f.px, 150f.px, 150f.px, paint)
-        canvas.drawBitmap(rectBitmap, 50f.px, 0f, paint)
+        canvas.drawBitmap(rectBitmap, 50f.dp, 0f, paint)
         paint.xfermode = null
         canvas.restore()
     }

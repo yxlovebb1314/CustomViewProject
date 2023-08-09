@@ -4,13 +4,11 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Path
-import android.graphics.RadialGradient
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
-import com.example.newproject.ui.utils.px
+import com.example.newproject.ui.utils.dp
 
-private val RADIUS = 100f.px
+private val RADIUS = 100f.dp
 
 class TestView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 

@@ -11,9 +11,9 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import com.example.customviewproject.R
-import com.example.newproject.ui.utils.px
+import com.example.newproject.ui.utils.dp
 
-private val IMAGE_WIDTH = 300f.px
+private val IMAGE_WIDTH = 300f.dp
 private val IMAGE_PADDING = 0f
 private val XFERMODE = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)  //设置遮罩模式
 

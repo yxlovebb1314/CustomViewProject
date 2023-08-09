@@ -8,21 +8,21 @@ import android.graphics.PathDashPathEffect
 import android.graphics.PathMeasure
 import android.util.AttributeSet
 import android.view.View
-import com.example.newproject.ui.utils.px
+import com.example.newproject.ui.utils.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
 //小刻度的长和宽
-private val DASH_WIDTH = 2f.px
-private val DASH_LENGTH = 10f.px
+private val DASH_WIDTH = 2f.dp
+private val DASH_LENGTH = 10f.dp
 //圆弧半径
-private val ARC_RADIUS = 150f.px
+private val ARC_RADIUS = 150f.dp
 //圆弧角度起始角度
 private const val ARC_ANGLE = 150f
 //圆弧划过的角度
 private const val ARC_SWEEP_ANGLE = 360 - (ARC_ANGLE - 90f) * 2
 //指针长度
-private val POINTER_LENGTH = 100f.px
+private val POINTER_LENGTH = 100f.dp
 
 /**
  * 仪表盘View
@@ -36,7 +36,7 @@ class DashboardView(context: Context?, attrs: AttributeSet?) : View(context, att
 
     init {
         paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 3f.px
+        paint.strokeWidth = 3f.dp
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
