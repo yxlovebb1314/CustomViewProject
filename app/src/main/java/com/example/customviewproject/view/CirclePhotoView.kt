@@ -11,6 +11,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import com.example.customviewproject.R
+import com.example.customviewproject.utils.BitmapUtils
 import com.example.newproject.ui.utils.dp
 
 private val IMAGE_WIDTH = 300f.dp
@@ -29,12 +30,12 @@ class CirclePhotoView(context: Context?, attrs: AttributeSet?) : View(context, a
         val count = canvas.saveLayer(bounds, null)
         canvas.drawOval(IMAGE_PADDING, IMAGE_PADDING, IMAGE_PADDING + IMAGE_WIDTH, IMAGE_PADDING + IMAGE_WIDTH, paint)
         paint.xfermode = XFERMODE
-        canvas.drawBitmap(getAvatar(IMAGE_WIDTH.toInt()), IMAGE_PADDING, IMAGE_PADDING, paint)
+        canvas.drawBitmap(BitmapUtils.getAvatar(resources,IMAGE_WIDTH.toInt()), IMAGE_PADDING, IMAGE_PADDING, paint)
         paint.xfermode = null
         canvas.restoreToCount(count)
     }
 
-    private fun getAvatar(width: Int) : Bitmap {
+    /*private fun getAvatar(width: Int) : Bitmap {
         val options = BitmapFactory.Options()
         //预加载图片，只加载图片的参数
         options.inJustDecodeBounds = true
@@ -43,6 +44,6 @@ class CirclePhotoView(context: Context?, attrs: AttributeSet?) : View(context, a
         options.inDensity = options.outWidth
         options.inTargetDensity = width
         return BitmapFactory.decodeResource(resources, R.mipmap.messi, options)
-    }
+    }*/
 
 }
