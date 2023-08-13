@@ -10,20 +10,24 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.customviewproject.R
 
-class HomeRvAdapter(val context : Context) : Adapter<HomeRvAdapter.Holder>() {
+class HomeRvAdapter(val context: Context) : Adapter<HomeRvAdapter.Holder>() {
 
     private var listener: OnItemClickListener? = null
 
-    fun setOnItemClickListener(listener : OnItemClickListener) {
+    fun setOnItemClickListener(listener: OnItemClickListener) {
         this.listener = listener
     }
 
     private val list = arrayListOf(
         "第一章和第二章、图形的位置和尺寸测量以及遮罩原理",
-        "第三章、文字的测量")
+        "第三章、文字的测量",
+        "属性动画和硬件加速"
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        return Holder(LayoutInflater.from(context).inflate(R.layout.layout_home_list_item, parent, false))
+        return Holder(
+            LayoutInflater.from(context).inflate(R.layout.layout_home_list_item, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
@@ -42,6 +46,6 @@ class HomeRvAdapter(val context : Context) : Adapter<HomeRvAdapter.Holder>() {
     }
 
     interface OnItemClickListener {
-        fun onClick(position : Int)
+        fun onClick(position: Int)
     }
 }

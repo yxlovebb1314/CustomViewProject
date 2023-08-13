@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AnimatorActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/bt_start1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="ViewPropertyAnimator的简单使用"
+                android:textAllCaps="false"
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="只能使用一些最简单的属性来执行动画"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_act_animator_imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/touxiang2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="150dp"
+                />
+
+            <com.example.customviewproject.view.ClockView
+                android:id="@+id/clockView"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
