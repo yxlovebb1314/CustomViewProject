@@ -13,4 +13,5 @@
     <color name="yellow">#ffffff00</color>
     <color name="blue2">#ff00ffff</color>
     <color name="purple">#ffff00ff</color>
+    <color name="gray">#aaaaaa</color>
 </resources>

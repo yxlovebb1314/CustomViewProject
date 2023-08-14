@@ -31,11 +31,8 @@ class ClockView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private val pointLenM = RADIUS - 45.dp  //分针长度
     private val pointLenS = RADIUS - 30.dp  //秒针长度
 
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#aa00bb")
-        style = Paint.Style.STROKE
-        strokeWidth = 4.dp
-    }
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textSize = 20.dp
         it.color = Color.parseColor("#aa00bb")
@@ -51,6 +48,12 @@ class ClockView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private lateinit var effectSmall : PathDashPathEffect
     private lateinit var effectNormal : PathDashPathEffect
     private val pathMeasure = PathMeasure(circlePath, false)
+
+    private fun initPaint(paint : Paint) {
+        paint.color = Color.parseColor("#aa00bb")
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 4.dp
+    }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         Log.e(TAG, "ClockView --> onSizeChanged:")
@@ -76,6 +79,8 @@ class ClockView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        Log.e(TAG, "onDraw:")
+        initPaint(paint)
         //画圆环
         canvas.drawPath(circlePath, paint)
         paint.pathEffect = effectSmall
@@ -89,23 +94,48 @@ class ClockView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
         drawLine(canvas)
     }
 
+    /**
+     * 复位时钟到初始值
+     */
+    fun resetClock() {
+        angleM = baseAngleM
+        angleS = baseAngleS
+        invalidate()
+    }
+
+    private val baseAngleS = 0f //秒针起始角度
+    var angleS = baseAngleS
+        set(value) {
+            field = value
+            invalidate()
+        }
+
+
+    private val baseAngleM = 30f * 7  //分针初始角度
+    var angleM = baseAngleM
+        set(value) {
+            field = value
+//            Log.e(TAG, "set---> value: $value , angleM : $angleM" )
+            invalidate()
+        }
+
     private fun drawLine(canvas: Canvas) {
         paint.pathEffect = null
         //temp--秒针在12点位置，分针在6点位置，时针在3点位置  即3点30分的时钟
         paint.color = Color.parseColor("#ff0000")
         canvas.drawLine(PADDING + RADIUS, PADDING + RADIUS,
-            PADDING + RADIUS + pointLenS * sin(Math.toRadians((30f.toDouble() * 0))).toFloat(),
-            PADDING + RADIUS - pointLenS * cos(Math.toRadians(30f.toDouble() * 0)).toFloat() ,
+            PADDING + RADIUS + pointLenS * sin(Math.toRadians(angleS.toDouble())).toFloat(),
+            PADDING + RADIUS - pointLenS * cos(Math.toRadians(angleS.toDouble())).toFloat() ,
             paint)
         paint.color = Color.parseColor("#000000")
         canvas.drawLine(PADDING + RADIUS, PADDING + RADIUS,
-            PADDING + RADIUS + pointLenM * sin(Math.toRadians((30f.toDouble() * 7))).toFloat(),
-            PADDING + RADIUS - pointLenM * cos(Math.toRadians(30f.toDouble() * 7)).toFloat() ,
+            PADDING + RADIUS + pointLenM * sin(Math.toRadians(angleM.toDouble())).toFloat(),
+            PADDING + RADIUS - pointLenM * cos(Math.toRadians(angleM.toDouble())).toFloat(),
             paint)
         paint.strokeWidth = 6.dp
         canvas.drawLine(PADDING + RADIUS, PADDING + RADIUS,
-            PADDING + RADIUS + pointLenH * sin(Math.toRadians((30f.toDouble() * (3 + 7f / 12)))).toFloat(),
-            PADDING + RADIUS - pointLenH * cos(Math.toRadians(30f.toDouble() * (3 + 7f / 12))).toFloat() ,
+            PADDING + RADIUS + pointLenH * sin(Math.toRadians((30f * (3 + angleM / 360f)).toDouble())).toFloat(),
+            PADDING + RADIUS - pointLenH * cos(Math.toRadians((30f * (3 + angleM / 360f)).toDouble())).toFloat() ,
             paint)
     }
 

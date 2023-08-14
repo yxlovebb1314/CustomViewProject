@@ -17,11 +17,17 @@
             android:orientation="vertical"
             >
 
+            <TextView
+                android:text="ViewPropertyAnimator的简单使用"
+                style="@style/smallTextTitle"
+                android:layout_gravity="center"
+                />
+
             <Button
-                android:id="@+id/bt_start1"
+                android:id="@+id/btStart1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="ViewPropertyAnimator的简单使用"
+                android:text="Start"
                 android:textAllCaps="false"
                 />
 
@@ -43,12 +49,158 @@
                 android:layout_marginBottom="150dp"
                 />
 
+            <View
+                style="@style/line"
+                />
+
+            <TextView
+                android:text="Animator的简单使用"
+                style="@style/smallTextTitle"
+                android:layout_gravity="center"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/btStart2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="转动分针"
+                    />
+
+                <Button
+                    android:id="@+id/resetClock1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="复位"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
             <com.example.customviewproject.view.ClockView
                 android:id="@+id/clockView"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
 
+            <View
+                style="@style/line"
+                />
+
+            <TextView
+                style="@style/smallTextTitle"
+                android:text="AnimatorSet和PropertyValuesHolder的使用"
+                android:layout_gravity="center"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/btStart3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="AnimatorSet顺序执行"
+                    android:textAllCaps="false"
+                    />
+
+                <Button
+                    android:id="@+id/btStart3_2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="PropertyValuesHolder共同执行"
+                    android:textAllCaps="false"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <Button
+                android:id="@+id/resetClock2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="复位"
+                />
+
+            <com.example.customviewproject.view.ClockView
+                android:id="@+id/clockView2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <View
+                style="@style/line"
+                />
+
+            <TextView
+                style="@style/smallTextTitle"
+                android:text="KeyFrame的使用"
+                android:layout_gravity="center"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/btStart4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="转动分针"
+                    />
+
+                <Button
+                    android:id="@+id/resetClock3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="复位"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.example.customviewproject.view.ClockView
+                android:id="@+id/clockView3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <View
+                style="@style/line"
+                />
+
+            <TextView
+                style="@style/smallTextTitle"
+                android:text="估值器TypeEvaluator的使用"
+                android:layout_gravity="center"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/btStart5"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Start"
+                    android:textAllCaps="false"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.example.customviewproject.view.TextView
+                android:id="@+id/customTextView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
