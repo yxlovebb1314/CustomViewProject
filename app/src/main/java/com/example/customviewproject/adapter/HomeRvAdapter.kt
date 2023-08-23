@@ -21,7 +21,8 @@ class HomeRvAdapter(val context: Context) : Adapter<HomeRvAdapter.Holder>() {
     private val list = arrayListOf(
         "第一章和第二章、图形的位置和尺寸测量以及遮罩原理",
         "第三章、文字的测量",
-        "属性动画和硬件加速"
+        "第五章、属性动画和硬件加速",
+        "第七章、手写MeteralEditText"
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

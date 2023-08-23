@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CustomViewProject"
         tools:targetApi="31">
         <activity
+            android:name=".activity.MeterialEditTextActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.AnimatorActivity"
             android:exported="false" />
         <activity

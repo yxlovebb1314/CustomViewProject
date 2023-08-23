@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MeterialEditTextActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#66aabb00"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用于对照的EditText"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#6600aabb"
+        android:layout_marginTop="10dp"
+        >
+
+        <com.example.customviewproject.view.MeterialEditText
+            android:id="@+id/meteralEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入UserName"
+            />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_open"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="open function"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/bt_close"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="close function"
+            android:textAllCaps="false"
+            app:userFunction="false"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

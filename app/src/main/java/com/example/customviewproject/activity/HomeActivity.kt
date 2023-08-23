@@ -28,6 +28,7 @@ class HomeActivity : AppCompatActivity() {
                     0 -> goToActivity(DashBoard_Pie_Activity::class.java)
                     1 -> goToActivity(TextActivity::class.java)
                     2 -> goToActivity(AnimatorActivity::class.java)
+                    3 -> goToActivity(MeterialEditTextActivity::class.java)
                 }
             }
         })
