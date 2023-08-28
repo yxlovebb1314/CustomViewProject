@@ -74,6 +74,7 @@ class MeasureCircleView(context: Context?, attrs: AttributeSet?) : View(context,
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        Log.e(TAG, "onDraw: ")
         canvas.drawCircle(PADDING + RADIUS, PADDING + RADIUS, RADIUS, circlePaint)
     }
 }

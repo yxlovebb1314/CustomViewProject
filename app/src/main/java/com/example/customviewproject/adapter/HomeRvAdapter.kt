@@ -23,7 +23,8 @@ class HomeRvAdapter(val context: Context) : Adapter<HomeRvAdapter.Holder>() {
         "第三章、文字的测量",
         "第五章、属性动画和硬件加速",
         "第七章、手写MeteralEditText",
-        "第九章、自定义布局之尺寸的自定义"
+        "第九章、自定义布局之尺寸的自定义",
+        "第十章、自定义Layout"
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

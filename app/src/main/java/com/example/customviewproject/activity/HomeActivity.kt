@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
                     2 -> goToActivity(AnimatorActivity::class.java)
                     3 -> goToActivity(MeterialEditTextActivity::class.java)
                     4 -> goToActivity(MeasureLayoutActivity::class.java)
+                    5 -> goToActivity(CustomLayoutActivity::class.java)
                 }
             }
         })
