@@ -31,6 +31,7 @@ class HomeActivity : AppCompatActivity() {
                     3 -> goToActivity(MeterialEditTextActivity::class.java)
                     4 -> goToActivity(MeasureLayoutActivity::class.java)
                     5 -> goToActivity(CustomLayoutActivity::class.java)
+                    6 -> goToActivity(ScalableImageViewActivity::class.java)
                 }
             }
         })

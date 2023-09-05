@@ -24,7 +24,8 @@ class HomeRvAdapter(val context: Context) : Adapter<HomeRvAdapter.Holder>() {
         "第五章、属性动画和硬件加速",
         "第七章、手写MeteralEditText",
         "第九章、自定义布局之尺寸的自定义",
-        "第十章、自定义Layout"
+        "第十章、自定义Layout",
+        "第十三章、双向滑动的ScalableImageView"
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
