@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.ScalableImageViewActivity">
 
-    <com.example.customviewproject.view.ScalableImageView
+    <com.example.customviewproject.view.MyScalableImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
