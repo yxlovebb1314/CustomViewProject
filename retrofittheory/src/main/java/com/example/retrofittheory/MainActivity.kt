@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import com.example.retrofittheory.entity.Repo
+import com.example.retrofittheory.eventbus.TestEvent
 import com.example.retrofittheory.network.GithubService
 import com.example.retrofittheory.network.HttpModel
 import io.reactivex.rxjava3.core.SingleObserver
 import io.reactivex.rxjava3.disposables.Disposable
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -16,6 +19,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        EventBus.getDefault().register(this)
+        EventBus.getDefault().post(TestEvent())
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/")
@@ -59,5 +64,15 @@ Log.e("TAG", "onResponse: ${response.body()?.get(0)?.name}")
 
 
 
+    }
+
+    @Subscribe
+    public fun getTestEvent(event: TestEvent) {
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this)
     }
 }

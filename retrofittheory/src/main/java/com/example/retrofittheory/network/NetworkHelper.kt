@@ -35,6 +35,7 @@ class NetworkHelper private constructor() {
                 .baseUrl("https://api.github.com/")
                 .client(getClient())
                 .addConverterFactory(GsonConverterFactory.create())
+                    //这里配置了.createWithScheduler(Schedulers.io()) 就可以不用在进行请求时，单独配置订阅的线程了
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build()
         }

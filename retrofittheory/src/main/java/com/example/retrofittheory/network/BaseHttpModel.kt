@@ -9,14 +9,14 @@ abstract class BaseHttpModel {
 
     fun <T> setMainOb(single : Single<T>, observer : SingleObserver<T>) {
         single
-            .subscribeOn(Schedulers.io())
+//            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(observer)
     }
 
     fun <T> setWorkThreadOb(single : Single<T>, observer : SingleObserver<T>) {
         single
-            .subscribeOn(Schedulers.io())
+//            .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.newThread())
             .subscribe(observer)
     }
